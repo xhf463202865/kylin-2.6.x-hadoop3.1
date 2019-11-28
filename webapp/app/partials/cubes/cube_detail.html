@@ -19,7 +19,7 @@
 <div ng-controller="CubeCtrl" class="nav-tabs-custom" style="margin-top:40px;">
     <ul class="nav nav-tabs">
         <li class="{{(!cube.visiblePage || cube.visiblePage=='metadata')? 'active':''}}">
-            <a href="" ng-click="cube.visiblePage='metadata'">网格</a>
+            <a href="" ng-click="cube.visiblePage='metadata'">表格</a>
         </li>
         <!--</li>-->
         <li class="{{cube.visiblePage=='sql'? 'active':''}}">
@@ -101,7 +101,7 @@
         <div style="margin: 15px;">
             <div ng-if="cube.hbase">
               <div class="hr hr8 hr-double hr-dotted"></div>
-              <h5><b>片段号:</b> <span class="red">{{cube.hbase.length}}</span> <b>总尺寸:</b> <span class="red">{{cube.totalSize | bytes}}</span></h5>
+              <h5><b>片段号:</b> <span class="red">{{cube.hbase.length}}</span> <b>总数据量:</b> <span class="red">{{cube.totalSize | bytes}}</span></h5>
             </div>
             <div ng-repeat="table in cube.hbase">
                 <h5><b>片段名称：</b> {{table.segmentName}}</h5>

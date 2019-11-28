@@ -24,7 +24,7 @@
           <div style="margin-left:22px;">
             <div class="box-body">
               <div class="col-xs-12">
-                访问 <a href="http://kylin.apache.org/blog/2016/02/18/new-aggregation-group" target="_blank">聚合群</a> 有关聚合组的更多信息。
+                访问 <a href="http://kylin.apache.org/blog/2016/02/18/new-aggregation-group" target="_blank">聚合组</a> 有关聚合组的更多信息。
               </div>
             </div>
           </div>
@@ -308,7 +308,7 @@
               <table ng-if="cubeMetaFrame.mandatory_dimension_set_list.length > 0 && state.mode!=='edit'" class="table table-hover table-bordered list" style="table-layout: fixed;width:92%;">
                 <thead>
                   <tr>
-                    <th>长方体</th>
+                    <th>cube</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -323,7 +323,7 @@
               <table ng-if="state.mode=='edit'" class="table table-hover table-bordered list" style="table-layout: fixed;width:92%;">
                 <thead>
                   <tr>
-                    <th>长方体</th>
+                    <th>cube</th>
                     <th style="width:5%"></th>
                   </tr>
                 </thead>
@@ -331,7 +331,7 @@
                   <tr ng-repeat="dimensionSet in cubeMetaFrame.mandatory_dimension_set_list">
                     <td>
                       <ui-select multiple ng-model="dimensionSet" theme="bootstrap" sortable="true" close-on-select="false" class="form-control">
-                        <ui-select-match placeholder="选择尺寸...">{{$item.column}}</ui-select-match>
+                        <ui-select-match placeholder="选择大小...">{{$item.column}}</ui-select-match>
                         <ui-select-choices repeat="dimension.column as dimension in cubeMetaFrame.rowkey.rowkey_columns | filter:$select.search">
                           <div ng-bind-html="dimension.column | highlight: $select.search"></div>
                         </ui-select-choices>
@@ -345,7 +345,7 @@
                   <tr>
                     <td>
                       <ui-select multiple ng-model="mandatoryDimensionSet.select" theme="bootstrap" sortable="true" close-on-select="false" class="form-control">
-                        <ui-select-match placeholder="选择尺寸...">{{$item.column}}</ui-select-match>
+                        <ui-select-match placeholder="选择大小...">{{$item.column}}</ui-select-match>
                         <ui-select-choices repeat="dimension.column as dimension in cubeMetaFrame.rowkey.rowkey_columns | filter:$select.search">
                           <div ng-bind-html="dimension.column | highlight: $select.search"></div>
                         </ui-select-choices>
@@ -358,7 +358,7 @@
                   </tr>
                   <tr>
                     <td colspan="2">
-                      <label>从文件导入长方体:</label>
+                      <label>从文件导入cube:</label>
                       <input type="file" name="cuboids" id="cuboids" style="display: inline;"/>
                       <button class="btn btn-xs btn-info" ng-click="uploadMandatoryDimensionSetList()">上传</button>
                     </td>
