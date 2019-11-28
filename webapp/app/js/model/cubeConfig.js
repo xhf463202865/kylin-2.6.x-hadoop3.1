@@ -78,13 +78,13 @@ KylinApp.constant('cubeConfig', {
     intEncodingOptions: [1,2,3,4,5,6,7,8],
 //    cubes config
   theaditems: [
-    {attr: '名称', name: 'Name'},
-    {attr: '状态', name: 'Status'},
-    {attr: '尺寸', name: 'Cube Size'},
-    {attr: '输入记录数', name: 'Source Records'},
-    {attr: '上次构建时间', name: 'Last Build Time'},
-    {attr: '所有者', name: 'Owner'},
-    {attr: '创建时间UTC', name: 'Create Time'}
+    {attr: 'name', name: '名称'},
+    {attr: 'status', name: '状态'},
+    {attr: 'size_kb', name: '多维数据集大小'},
+    {attr: 'input_records_count', name: '数据记录数量'},
+    {attr: 'last_build_time', name: '上次构建时间'},
+    {attr: 'owner', name: '所有者'},
+    {attr: 'create_time_utc', name: '创建时间'}
   ],
   streamingAutoGenerateMeasure:[
     {name:"开始的年份",type:"date"},
