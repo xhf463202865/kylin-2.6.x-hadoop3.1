@@ -105,7 +105,7 @@ KylinApp.directive('kylinPagination', function ($parse, $q) {
       scope: {},
       templateUrl: 'partials/directives/loading.html',
       link: function (scope, element, attrs) {
-        scope.text = (!!!attrs.text) ? 'Loading...' : attrs.text;
+        scope.text = (!!!attrs.text) ? '载入中...' : attrs.text;
       }
     };
   })
@@ -114,7 +114,7 @@ KylinApp.directive('kylinPagination', function ($parse, $q) {
       scope: {},
       templateUrl: 'partials/directives/noResult.html',
       link: function (scope, element, attrs) {
-        scope.text = (!!!attrs.text) ? 'No Result.' : attrs.text;
+        scope.text = (!!!attrs.text) ? '没有结果.' : attrs.text;
       }
     };
   }).directive('showonhoverparent',
@@ -301,7 +301,7 @@ KylinApp.directive('kylinPagination', function ($parse, $q) {
         nextpara: '='
       },
       template:
-      '<li class="parent_li">Value:<b>{{nextpara.value}}</b>, Type:<b>{{ nextpara.type }}</b></li>' +
+      '<li class="parent_li">值:<b>{{nextpara.value}}</b>, 类型:<b>{{ nextpara.type }}</b></li>' +
       '<parametertree ng-if="nextpara.next_parameter!=null" nextpara="nextpara.next_parameter"></parameterTree>',
       compile: function(tElement, tAttr, transclude) {
         var contents = tElement.contents().remove();
@@ -347,8 +347,8 @@ KylinApp.directive('kylinPagination', function ($parse, $q) {
       nextpara: '='
     },
     template:
-    '<li class="parent_li">SUM|ORDER BY:<b>{{nextpara.value}}</b></b></li>' +
-    '<li class="parent_li">Group By:'+
+    '<li class="parent_li">求和|排序:<b>{{nextpara.value}}</b></b></li>' +
+    '<li class="parent_li">分组:'+
     '<groupbytree nextpara="nextpara.next_parameter"></groupbytree>'+
     '</li>',
     compile: function(tElement, tAttr, transclude) {
@@ -372,8 +372,8 @@ KylinApp.directive('kylinPagination', function ($parse, $q) {
       nextpara: '='
     },
     template:
-    '<li class="parent_li">Host Column:<b>{{nextpara.value}}</b></b></li>' +
-    '<li class="parent_li">Extended Column:<b>{{nextpara.next_parameter.value}}</b></li>',
+    '<li class="parent_li">主机列:<b>{{nextpara.value}}</b></b></li>' +
+    '<li class="parent_li">扩展列:<b>{{nextpara.next_parameter.value}}</b></li>',
     compile: function(tElement, tAttr, transclude) {
       var contents = tElement.contents().remove();
       var compiledContents;
@@ -463,15 +463,15 @@ KylinApp.directive('kylinPagination', function ($parse, $q) {
 
       function getOption() {
         var ranges = {
-          'Last 7 Days': [
+          '过去七天': [
             startOfToday().subtract(1, 'weeks'),
             endOfToday().subtract(1, 'days')
           ],
-          'This Month': [
+          '这个月': [
             startOfToday().startOf('month'),
             endOfToday()
           ],
-          'Last Month': [
+          '上个月': [
             startOfToday().subtract(1, 'month').startOf('month'),
             endOfToday().subtract(1, 'month').endOf('month')
           ]

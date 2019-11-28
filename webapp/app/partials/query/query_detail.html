@@ -65,7 +65,7 @@
         </li>
         <li class="col-md-5 " style="display: inline">
             <label>多维数据集: &nbsp;</label>
-            <span>{{curQuery.result.cube | limitTo:30}}<span ng-if="curQuery.result.cube.length > 30">...  <i class="fa fa-list text-aqua" style="cursor: pointer;" popover-placement="left" popover="{{curQuery.result.cube | formatCubeName}}" popover-title="Cube Info Details"></i></span></span>
+            <span>{{curQuery.result.cube | limitTo:30}}<span ng-if="curQuery.result.cube.length > 30">...  <i class="fa fa-list text-aqua" style="cursor: pointer;" popover-placement="left" popover="{{curQuery.result.cube | formatCubeName}}" popover-title="Cube 信息详情"></i></span></span>
         </li>
     </ul>
 </div>
@@ -75,7 +75,7 @@
     <label>结果 <span style="vertical-align:middle;color: grey;font-size: 15px"
                          ng-if="curQuery.status=='success'">(<strong>{{curQuery.result.results.length}})</strong></span></label>
     <span  ng-if="curQuery.result.partial" class="text-warning">
-       注意：当前结果是部分结果，请单击“显示全部”按钮以获取所有结果。
+       注意：当前结果是部分结果，请单击\"显示全部\"按钮以获取所有结果。
       <button class="btn btn-success btn-xs" ng-click="reset(curQuery);curQuery.acceptPartial=false;query(curQuery)">
         <i class="fa fa-download"></i>
         显示所有
@@ -84,7 +84,7 @@
     <div class="pull-right" ng-if="curQuery.status=='success'">
         <button class="btn btn-default btn-xs"  ng-click="curQuery.graph.show=!curQuery.graph.show;buildGraphMetadata(curQuery);resetGraph(curQuery)">
             <span ng-if="!curQuery.graph.show"><i class="fa fa-bar-chart-o"></i> 可视化</span>
-            <span ng-if="curQuery.graph.show"><i class="fa fa-list-ul"></i> 网格</span>
+            <span ng-if="curQuery.graph.show"><i class="fa fa-list-ul"></i> 表格</span>
         </button>
         <a class="btn btn-default btn-xs" ng-if="(userService.hasRole('ROLE_ADMIN')&&isAdminExportAllowed)||(!userService.hasRole('ROLE_ADMIN')&&isNonAdminExportAllowed)" href="{{config.service.url}}query/format/csv?sql={{exportSql}}&project={{curQuery.project}}" target="_blank">
             <i class="fa fa-cloud-download"></i> 导出</a>

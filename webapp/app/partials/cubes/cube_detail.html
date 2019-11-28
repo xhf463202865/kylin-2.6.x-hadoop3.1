@@ -39,10 +39,10 @@
         </li>
         <li class="{{cube.visiblePage=='hbase'? 'active':''}}"
             ng-if="userService.hasRole('ROLE_ADMIN')">
-            <a href="" ng-click="cube.visiblePage='hbase';getHbaseInfo(cube)">存储</a>
+            <a href="" ng-click="cube.visiblePage='hbase';getHbaseInfo(cube)">存储详情</a>
         </li>
         <li class="{{cube.visiblePage=='planner'? 'active':''}}" ng-if="(userService.hasRole('ROLE_ADMIN') || hasPermission('cube', cube, permissions.ADMINISTRATION.mask)) && isShowCubeplanner">
-            <a href="" ng-click="cube.visiblePage='planner';getCubePlanner(cube);">策划人</a>
+            <a href="" ng-click="cube.visiblePage='planner';getCubePlanner(cube);">cube解释器</a>
         </li>
     </ul>
 
@@ -101,18 +101,18 @@
         <div style="margin: 15px;">
             <div ng-if="cube.hbase">
               <div class="hr hr8 hr-double hr-dotted"></div>
-              <h5><b>段号:</b> <span class="red">{{cube.hbase.length}}</span> <b>总尺寸:</b> <span class="red">{{cube.totalSize | bytes}}</span></h5>
+              <h5><b>片段号:</b> <span class="red">{{cube.hbase.length}}</span> <b>总尺寸:</b> <span class="red">{{cube.totalSize | bytes}}</span></h5>
             </div>
             <div ng-repeat="table in cube.hbase">
-                <h5><b>分割：</b> {{table.segmentName}}</h5>
+                <h5><b>片段名称：</b> {{table.segmentName}}</h5>
                 <ul>
                     <li ng-if="cube.streaming">Status: <span class="red">{{table.segmentStatus}}</span></li>
                     <li ng-if="cube.model.partition_desc.partition_date_column">开始时间: <span class="red">{{table.dateRangeStart | reverseToGMT0}}</span></li>
                     <li ng-if="cube.model.partition_desc.partition_date_column">结束时间: <span class="red">{{table.dateRangeEnd | reverseToGMT0}}</span></li>
-                    <li>源计数: <span class="red">{{table.sourceCount}}</span></li>
+                    <li>数据源的数据量: <span class="red">{{table.sourceCount}}</span></li>
                     <li>HBase 表: <span class="red">{{table.tableName}}</span></li>
                     <li>Region 数: <span class="red">{{table.regionCount}}</span></li>
-                    <li>尺寸: <span class="red">{{table.tableSize | bytes}}</span></li>
+                    <li>大小: <span class="red">{{table.tableSize | bytes}}</span></li>
                 </ul>
             </div>
             <div ng-if="cube.hbase.length == 0">
@@ -124,7 +124,7 @@
         <div style="padding: 15px;">
             <div class="row">
                 <div class="col-sm-12">
-                    <h4 style="display: inline;">长方体分布</h4>
+                    <h4 style="display: inline;">数据集分布</h4>
                     <button ng-if="enableRecommend" class="btn btn-success btn-sm pull-right" ng-click="getRecommendCuboids(cube)" ng-if="currentData">
                         推荐
                     </button>

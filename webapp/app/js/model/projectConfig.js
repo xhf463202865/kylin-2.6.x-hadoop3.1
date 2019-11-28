@@ -20,7 +20,7 @@ KylinApp.constant('projectConfig', {
   theaditems: [
     {attr: 'name', name: '名称'},
     {attr: 'owner', name: '所有者'},
-    {attr: 'description', name: '描述'},
+    {attr: 'description', name: '详细信息'},
     {attr: 'create_time', name: '创建时间'}
   ]
 

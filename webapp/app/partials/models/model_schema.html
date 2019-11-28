@@ -43,17 +43,17 @@
                         </div>
                     </div>
                     <div class="col-xs-4 pull-right">
-                        <button class="btn btn-prev" ng-click="preView()" ng-show="curStep.title!='Model Info'">
+                        <button class="btn btn-prev" ng-click="preView()" ng-show="curStep.title!='模型信息'">
                             <i class="ace-icon fa fa-arrow-left"></i>
-                            上一个
+                            上一步
                         </button>
                         <button id="nextButton" class="btn btn-success btn-next" ng-disabled="forms[curStep.form].$invalid" ng-click="checkForm($index)?nextView():''"
-                                ng-show="curStep.title!='Settings'">
+                                ng-show="curStep.title!='设置'">
                             下一步
                             <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
                         </button>
                         <button class="btn btn-primary"  ng-click="prepareModel();saveModel()"
-                                ng-if="curStep.title=='Settings' && state.mode=='edit' && checkForm($index)">
+                                ng-if="curStep.title=='设置' && state.mode=='edit' && checkForm($index)">
                             保存
                         </button>
                     </div>

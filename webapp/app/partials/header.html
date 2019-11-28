@@ -22,13 +22,13 @@
       <div class="navbar-header">
         <a class="navbar-brand" href="query" style="padding: 2px 10px 0px 0px"><img src="image/logo.png" height="40px"
                                                                                     width="40px"/>
-          <small> 麒麟</small>
+          <small> 数据管理系统|建模工具</small>
         </a>
       </div>
 
       <div class="navbar-collapse collapse" collapse="isCollapsed">
         <ul class="nav navbar-nav">
-          <li class="project-cntnr" style="padding:7px 15px;background-color:#2e8965;"
+          <li class="project-cntnr" style="padding:7px 15px;background-color:#2387ea;"
               ng-if="userService.isAuthorized()">
             <select chosen ng-model="projectModel.selectedProject"
                     ng-init="newAccess.permission=permissions.READ.value;"
@@ -41,19 +41,19 @@
               </option>
             </select>
           </li>
-          <li class="{{activeTab=='query'?'purple':'green'}}" ng-if="userService.isAuthorized()">
+          <li class="{{activeTab=='query'?'purple':'blue'}}" ng-if="userService.isAuthorized()">
             <a href="query">查询</a>
           </li>
-          <li class="{{activeTab=='models'?'purple':'green'}}" ng-if="userService.isAuthorized()">
+          <li class="{{activeTab=='models'?'purple':'blue'}}" ng-if="userService.isAuthorized()">
             <a href="models">模型</a>
           </li>
-          <li class="{{activeTab=='jobs'?'purple':'green'}}" ng-if="userService.isAuthorized()">
+          <li class="{{activeTab=='jobs'?'purple':'blue'}}" ng-if="userService.isAuthorized()">
             <a href="jobs">监控</a>
           </li>
-          <li class="{{activeTab=='admin'?'purple':'green'}}" ng-if="userService.hasRole('ROLE_ADMIN')">
+          <li class="{{activeTab=='admin'?'purple':'blue'}}" ng-if="userService.hasRole('ROLE_ADMIN')">
             <a href="admin">系统</a>
           </li>
-          <li class="{{activeTab=='dashboard'?'purple':'green'}}" ng-if="userService.isAuthorized() && isShowDashboard">
+          <li class="{{activeTab=='dashboard'?'purple':'blue'}}" ng-if="userService.isAuthorized() && isShowDashboard">
             <a href="dashboard">仪表盘</a>
           </li>
         </ul>

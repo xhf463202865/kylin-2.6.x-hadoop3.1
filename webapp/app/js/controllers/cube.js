@@ -132,8 +132,8 @@ KylinApp.controller('CubeCtrl', function ($scope, $rootScope, AccessService, Mes
                     $scope.currentData = [];
                 }
             }, function(e) {
-                SweetAlert.swal('糟糕...', '无法获取当前的长方体。', 'error');
-                console.error('当前的长方体误差', e.data);
+                SweetAlert.swal('糟糕...', '无法获取当前的cube。', 'error');
+                console.error('当前的cube误差', e.data);
             });
         } else {
             $scope.createChart(cube.currentCuboids, 'current');
@@ -169,8 +169,8 @@ KylinApp.controller('CubeCtrl', function ($scope, $rootScope, AccessService, Mes
                 }
             }, function(e) {
                 loadingRequest.hide();
-                SweetAlert.swal('糟糕...', '无法获得推荐的长方体； 检查是否已启用系统多维数据集。', 'error');
-                console.error('推荐长方体错误', e.data);
+                SweetAlert.swal('糟糕...', '无法获得推荐的cube； 检查是否已启用系统多维数据集。', 'error');
+                console.error('推荐cube错误', e.data);
             });
         } else {
             $scope.createChart(cube.recommendCuboids, 'recommend');
@@ -212,7 +212,7 @@ KylinApp.controller('CubeCtrl', function ($scope, $rootScope, AccessService, Mes
                             SweetAlert.swal('糟糕...', e.data.exception, 'error');
                         } else {
                             SweetAlert.swal('糟糕...', "无法创建优化多维数据集作业。", 'error');
-                            console.error('优化立方体错误', e.data);
+                            console.error('优化cube错误', e.data);
                         }
                 });
             }
@@ -239,8 +239,8 @@ KylinApp.controller('CubeCtrl', function ($scope, $rootScope, AccessService, Mes
                 }
             };
             $scope.currentOptions.chart.sunburst = getSunburstDispatch();
-            $scope.currentOptions.title.text = '当前长方体分布';
-            $scope.currentOptions.subtitle.text = '[长方体数: ' + data.nodeInfos.length + '] [行数: ' + data.totalRowCount + ']';
+            $scope.currentOptions.title.text = '当前cube分布';
+            $scope.currentOptions.subtitle.text = '[cube数量: ' + data.nodeInfos.length + '] [行数: ' + data.totalRowCount + ']';
         } else if ('recommend' === type) {
             $scope.recommendData = [chartData];
             $scope.recommendOptions = angular.copy(cubeConfig.baseChartOptions);
@@ -258,8 +258,8 @@ KylinApp.controller('CubeCtrl', function ($scope, $rootScope, AccessService, Mes
                 }
             };
             $scope.recommendOptions.chart.sunburst = getSunburstDispatch();
-            $scope.recommendOptions.title.text = '推荐长方体分布';
-            $scope.recommendOptions.subtitle.text = '[长方体数: ' + data.nodeInfos.length + '] [行数: ' + data.totalRowCount + ']';
+            $scope.recommendOptions.title.text = '推荐cube分布';
+            $scope.recommendOptions.subtitle.text = '[cube数: ' + data.nodeInfos.length + '] [行数: ' + data.totalRowCount + ']';
         }
     };
 

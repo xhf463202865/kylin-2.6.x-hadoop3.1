@@ -47,8 +47,8 @@
   </div>
   <div class="col-xs-6" ng-show="table.schemaChecked">
     <ol class="text-info" style="margin-bottom: 30px;">
-      <li>选择流表的“时间戳”类型列</li>
-      <li>默认情况下，系统将选择“默认”作为数据库，您可以指定类似“ database.table”的数据库</li>
+      <li>选择流表的"时间戳"类型列</li>
+      <li>默认情况下，系统将选择"default"作为数据库，您可以指定类似"database.table"的数据库</li>
       <li>从时间戳字段计算得出的时间维度，以帮助针对不同的时间粒度进行分析。</li>
     </ol>
     <form class="form-horizontal" name="form.setStreamingSchema" novalidate>
@@ -98,7 +98,7 @@
 
     <div class="has-error" ng-if="!rule.timestampColumnExist&&form.setStreamingSchema.$submitted">
       <small class="help-block">
-        您应该至少选择一个从源模式生成的“时间戳”类型列。	
+        您应该至少选择一个从源模式生成的"时间戳"类型列。	
       </small>
     </div>
   </div>

@@ -20,11 +20,11 @@
     <ng-form name="forms.cube_setting_form">
       <div>
         <div class="form-group">
-          <h3 style="margin-left:42px;">聚集组 </h3>
+          <h3 style="margin-left:42px;">聚合组 </h3>
           <div style="margin-left:22px;">
             <div class="box-body">
               <div class="col-xs-12">
-                访问 <a href="http://kylin.apache.org/blog/2016/02/18/new-aggregation-group" target="_blank">聚集群</a> 有关聚合组的更多信息。
+                访问 <a href="http://kylin.apache.org/blog/2016/02/18/new-aggregation-group" target="_blank">聚合群</a> 有关聚合组的更多信息。
               </div>
             </div>
           </div>
@@ -34,10 +34,10 @@
             <tr class="row">
               <th class="col-xs-1">ID</th>
               <th class="col-xs-3">
-                <span>聚集组</span>
+                <span>聚合组</span>
                 <span style="margin-left:42px">
-                  <i kylinpopover placement="left" title="最大尺寸组合" template="dimCapTip.html" class="fa fa-info-circle"></i>
-                 最大尺寸组合：
+                  <i kylinpopover placement="left" title="最大维度组合" template="dimCapTip.html" class="fa fa-info-circle"></i>
+                 最大维度组合：
                   <input onInput="this.value=this.value.replace(/[^0-9]/g, '')" type="text" ng-model="dim_cap" ng-change="changeDimCap(dim_cap)" ng-disabled="state.mode !== 'edit'" style="margin-left:5px; width:20px;">
                 </span>
               </th>
@@ -54,7 +54,7 @@
                 <table class="table">
                   <tr class="row">
                     <td class="col-xs-3" style="min-width:130px;">
-                      包括
+                      包含的
                     </td>
                     <td class="col-xs-8">
                       <!-- Dimensions -->
@@ -79,7 +79,7 @@
                   </tr>
                   <tr class="row">
                     <td class="col-xs-3">
-                      强制尺寸
+                      必要维度
                     </td>
                     <td class="col-xs-8">
                       <ui-select
@@ -103,7 +103,7 @@
                   </tr>
                   <tr class="row">
                     <td class="col-xs-3">
-                      层次结构维度
+                      层次维度
                     </td>
                     <td class="col-xs-9">
                       <table class="table">
@@ -143,7 +143,7 @@
                   </tr>
                   <tr class="row">
                     <td class="col-xs-3">
-                      接头尺寸
+                      联合维度
                     </td>
                     <td class="col-xs-9">
                       <table class="table">
@@ -193,13 +193,13 @@
             </tr>
           </table>
           <button class="btn btn-sm btn-info" style="margin-left:42px" ng-click="addNewAggregationGroup()"  ng-disabled="instance.status=='READY'"
-                  ng-show="state.mode=='edit'">新建聚集组<i class="fa fa-plus"></i>
+                  ng-show="state.mode=='edit'">新建聚合组<i class="fa fa-plus"></i>
           </button>
         </div>
         <div class="form-group large-popover" >
-          <h3 style="margin-left:42px">行键  <i kylinpopover placement="right" title="行键" template="rowkeyTip.html" class="fa fa-info-circle"></i></h3>
+          <h3 style="margin-left:42px">主键  <i kylinpopover placement="right" title="主键" template="rowkeyTip.html" class="fa fa-info-circle"></i></h3>
           <div style="padding: 0 42px; word-break: normal;">
-            <b>重要： </b>Dimension在HBase行键上的位置对于性能至关重要。 您可以拖放以调整顺序。 简而言之，将过滤维放在非过滤维之前，将高基数放在低基数之前。
+            <b>重要： </b>维度在HBase主键上的位置对于性能至关重要。 您可以拖放以调整顺序。 简而言之，将过滤维放在非过滤维之前，将高基数放在低基数之前。
           </div>
           <div style="margin-left:42px">
               <div class="box-body">
@@ -301,7 +301,7 @@
         </div>
         <!--Edit Mandatory Cuboids-->
         <div class="form-group large-popover" ng-if="state.mode=='edit' || (cubeMetaFrame.mandatory_dimension_set_list.length > 0 && state.mode!=='edit')">
-          <h3 style="margin-left:42px">强制性长方体</h3>
+          <h3 style="margin-left:42px">必要维度</h3>
           <div style="margin-left:42px;">
             <div class="box-body">
               <!-- view mode-->

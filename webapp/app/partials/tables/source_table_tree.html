@@ -26,8 +26,8 @@
         <div class="col-xs-5" style="padding-left: 0px;margin-top: 20px;">
             <div class="pull-right">
               <a class="btn btn-xs btn-primary" tooltip="载入表"  ng-if="userService.hasRole('ROLE_ADMIN')|| hasPermission('project',projectModel, permissions.ADMINISTRATION.mask)"  ng-click="openModal()"><i class="fa fa-download"></i></a>
-              <a class="btn btn-xs btn-info" tooltip="从树加载表"  ng-if="userService.hasRole('ROLE_ADMIN')|| hasPermission('project',projectModel, permissions.ADMINISTRATION.mask)"  ng-click="openTreeModal()"><i class="fa fa-download"></i></a>
-              <a class="btn btn-xs btn-primary" tooltip="添加流表"  ng-if="userService.hasRole('ROLE_ADMIN')|| hasPermission('project',projectModel, permissions.ADMINISTRATION.mask)"  ng-click="openStreamingSourceModal()"><i class="fa fa-area-chart"></i></a>
+              <a class="btn btn-xs btn-info" tooltip="从目录加载表"  ng-if="userService.hasRole('ROLE_ADMIN')|| hasPermission('project',projectModel, permissions.ADMINISTRATION.mask)"  ng-click="openTreeModal()"><i class="fa fa-download"></i></a>
+              <a class="btn btn-xs btn-primary" tooltip="添加流式表"  ng-if="userService.hasRole('ROLE_ADMIN')|| hasPermission('project',projectModel, permissions.ADMINISTRATION.mask)"  ng-click="openStreamingSourceModal()"><i class="fa fa-area-chart"></i></a>
             </div>
         </div>
 
@@ -49,7 +49,7 @@
 
 <script type="text/ng-template" id="addHiveTableFromTree.html">
   <div class="modal-header"><button class="close" type="button" data-dismiss="modal" ng-click="cancel()">×</button>
-    <h4>从树中加载表元数据</h4>
+    <h4>从目录中加载表元数据</h4>
   </div>
   <div class="modal-body">
     <span><strong>项目: </strong>{{ $parent.projectName!=null?$parent.projectName:'NULL'}}</span>
