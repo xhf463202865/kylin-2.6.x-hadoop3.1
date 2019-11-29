@@ -145,7 +145,7 @@
                     <tr ng-repeat="query in cachedFilterQueries | reverse track by $index"
                         ng-if="$index >= (cachedFilterQueries.curPage-1)*cachedFilterQueries.perPage && $index < cachedFilterQueries.curPage*cachedFilterQueries.perPage">
                         <td>
-                            <span style="color: #808080;line-height: 25px">被查询: {{query.savedAt | utcToConfigTimeZone}} </span><span ng-if="query.project">in 在项目: {{query.project}}</span>
+                            <span style="color: #808080;line-height: 25px">被查询: {{query.savedAt | utcToConfigTimeZone}} </span><span ng-if="query.project">在项目: {{query.project}}</span>
 
                             <div class="pull-right">
                                 <button class="btn btn-default btn-xs" ng-click="submitQuery(query.sql, query.project)"><i class="fa fa-refresh"></i>
