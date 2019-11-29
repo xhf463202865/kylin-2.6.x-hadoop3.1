@@ -183,13 +183,13 @@
                             <div class="col-xs-12">
                                 <div ng-repeat="joinIndex in [] | range: newLookup.join.primary_key.length">
                                     <div>
-                                        <select style="width: 45%" chosen data-placeholder="JoinTable列"
+                                        <select style="width: 45%" chosen data-placeholder="JoinTable Column"
                                                 ng-model="newLookup.join.foreign_key[$index]"  ng-change="changeKey($index)"
                                                 ng-options="newLookup.joinTable+'.'+columns.name as columns.name for columns in getColumnsByAlias(newLookup.joinTable)" >
                                             <option value=""></option>
                                         </select>
                                         <b>=</b>
-                                        <select style="width: 45%" chosen data-placeholder=" JoinTable列"
+                                        <select style="width: 45%" chosen data-placeholder=" JoinTable Column"
                                                 ng-model="newLookup.join.primary_key[$index]"  ng-change="changeKey($index)"
                                                 ng-options="newLookup.alias+'.'+columns.name as columns.name for columns in getColumnsByTable(newLookup.table)" >
                                             <option value=""></option>

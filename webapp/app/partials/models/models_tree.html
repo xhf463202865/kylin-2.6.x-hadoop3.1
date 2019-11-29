@@ -53,7 +53,7 @@
           <div class="pull-right" showonhoverparent style="display:none;" >
             <div ng-click="$event.stopPropagation();" class="btn-group">
               <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-                行动 <span class="ace-icon fa fa-caret-down icon-on-right"></span>
+                操作 <span class="ace-icon fa fa-caret-down icon-on-right"></span>
               </button>
               <ul class="dropdown-menu" role="menu" style="right:0;left:auto;" ng-if="(userService.hasRole('ROLE_ADMIN') || hasPermission('model',model, permissions.ADMINISTRATION.mask, permissions.MANAGEMENT.mask))">
                 <li><a ng-click="listCubes(model)"  title="使用多维数据集" style="cursor:pointer;margin-right: 8px;" >多维数据集</a></li>

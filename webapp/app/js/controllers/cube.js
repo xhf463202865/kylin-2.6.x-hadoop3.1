@@ -259,7 +259,7 @@ KylinApp.controller('CubeCtrl', function ($scope, $rootScope, AccessService, Mes
             };
             $scope.recommendOptions.chart.sunburst = getSunburstDispatch();
             $scope.recommendOptions.title.text = '推荐cube分布';
-            $scope.recommendOptions.subtitle.text = '[cube数: ' + data.nodeInfos.length + '] [行数: ' + data.totalRowCount + ']';
+            $scope.recommendOptions.subtitle.text = '[cube数量: ' + data.nodeInfos.length + '] [行数: ' + data.totalRowCount + ']';
         }
     };
 
